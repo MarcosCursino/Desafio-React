@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 
 import api from '../../services/api'
 
+
+
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -19,11 +21,22 @@ async function handleSubimit(event) {
       email,password }
   };
 
-   const response = await api(options);
-   console.log(response.data.data.token);
+   
+  const response = await api(options).then(resp => {
 
+    const { data } = resp
+    if(data) { 
+      localStorage.setItem('mytoken', data.data.token)
+    }
+});
 
 }
+
+    
+      // console.log('Logado, seu Token de acesso: ',response.data.data.token);
+
+
+
 
   return (
     <>
