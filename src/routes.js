@@ -1,16 +1,20 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route}from 'react-router-dom';
+import { Router, Switch, Route}from 'react-router';
 
 import Login from './pages/Login';
-import Users from './pages/users'
+import Users from './pages/users';
+
+import { history } from './history';
+import PrivateRoute from './privateRoutes';
 
 export default function Routes(){
+
   return (    
-    <BrowserRouter>
+    <Router history={history}>
       <Switch>
           <Route path="/" exact component={Login}  />
-          <Route path="/users" component={Users}  />
+          <PrivateRoute path="/users" component={Users}  />
       </Switch>
-  </BrowserRouter>
+  </Router>
   );
 }
