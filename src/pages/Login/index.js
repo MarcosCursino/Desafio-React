@@ -14,19 +14,15 @@ export default function Login() {
   async function handleSubimit(event) {
     event.preventDefault();
 
-    const options = {
-      method: 'post',
-      url: '/api/v1/auth/login',
-      data: {
-        email,
-        password,
-      },
-    };
-
-    const response = await api(options).then((resp) => {
+     api.post('/api/v1/auth/login', {
+       email,
+       password,
+     })
+     .then(resp => {
       const { data } = resp;
-      if (data) {
-        localStorage.setItem('mytoken', data.data.token);
+      if (data)
+      {
+        localStorage.setItem('my-token', data.data.token);
         history.push('/users');
       }
     });
