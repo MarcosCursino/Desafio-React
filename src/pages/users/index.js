@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { history } from '../../history';
+
 import api from '../../services/api';
 
 import{ Container } from "./styles";
@@ -11,6 +13,11 @@ export default class App extends Component {
     };
   }
 
+  functionName() { 
+    localStorage.removeItem('mytoken');
+    history.push('/');
+  }
+
   async componentDidMount() {
     const token = localStorage.getItem('mytoken');
     api.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -18,7 +25,6 @@ export default class App extends Component {
     this.setState({ users: response.data.data });
   }
 
- 
   render() {
     
     const { users } = this.state;
@@ -38,9 +44,15 @@ export default class App extends Component {
               </span>
           </ul>
         ))}
+
+        <button 
+          className="btn" 
+          type="submit" 
+          onClick={this.functionName}>
+          Sair
+        </button>
      
       </Container>
-     
     );
   };
 };

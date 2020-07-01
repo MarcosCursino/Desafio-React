@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 
+import { history } from '../../history';
 import api from '../../services/api';
 
-import { history } from '../../history';
-
-
-import{Form, Container} from "./styles";
+import{ Form, Container } from "./styles";
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -22,12 +20,12 @@ export default function Login() {
       const { data } = resp;
       if (data)
       {
-        localStorage.setItem('my-token', data.data.token);
+        localStorage.setItem('mytoken', data.data.token);
         history.push('/users');
       }
     });
   }
-
+  
 
   return (
     <Container>

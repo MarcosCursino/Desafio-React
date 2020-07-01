@@ -18,8 +18,8 @@ export const Container = styled.div`
    display: flex;
    justify-content: center;
    flex-direction: center;
-   font-size: 30px;
-
+   font-size: 32px;
+   color: #eee;
  }
  strong{
   display: flex;
@@ -36,5 +36,10 @@ export const Container = styled.div`
   border-radius: 3px;
   line-height: 30px;
   font-weight: bold;
+ }
+ button {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
  }
 `;
