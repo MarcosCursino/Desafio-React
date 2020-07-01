@@ -18,13 +18,13 @@ export const Container = styled.div`
    display: flex;
    justify-content: center;
    flex-direction: center;
-   font-size: 32px;
-   color: #eee;
+   font-size: 34px;
+   color: #fff;
  }
  strong{
   display: flex;
   justify-content: center;
-  background-color: #fff; 
+  background-color: #fff;
   border-radius: 3px;
   line-height: 30px;
  }
@@ -32,14 +32,20 @@ export const Container = styled.div`
  span{
   display: flex;
   justify-content: center;
-  background-color: #fff; 
+  background-color: #fff;
   border-radius: 3px;
   line-height: 30px;
   font-weight: bold;
  }
  button {
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
+    color: #000;
+    font-size: 16px;
+    background: #fff;
+    height: 46px;
+    border: 0;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 30px;
+  
  }
 `;
